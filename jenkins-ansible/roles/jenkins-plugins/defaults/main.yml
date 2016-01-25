@@ -1,0 +1,82 @@
+jenkins_directory: /data/jenkins
+
+directories:
+  - '{{ jenkins_directory }}/plugins'
+
+# Dependencies:
+# ansible
+#   - credentials
+#   - workflow-step-api
+#   - ssh-credentials
+# copyartifact
+#   - matrix-project
+#   - maven-plugin
+# ec2
+#   - node-iterator-api
+# git
+#   - scm-api
+#   - token-macro
+#   - git-client
+#   - matrix-project
+#   - credentials
+#   - mailer.jpi
+#   - ssh-credentials
+# git-client
+#   - ssh-credentials
+# github
+#   - token-macro
+#   - plain-credentials
+#   - git
+#   - github-api
+#   - credentials
+# join
+#   - maven-plugin
+# matrix-project
+#   - script-security
+#   - junit
+# maven-plugin
+#   - javadoc
+#   - mailer
+#   - token-macro
+#   - junit
+# plain-credentials
+#   - credentials
+# ssh-agent
+#   - ssh-credentials
+#   - credentials
+#   - workflow-step-api
+# ssh-credentials
+#   - credentials
+# ssh-slaves
+#   - ssh-credentials
+#   - credentials
+plugins:
+  - scm-api.hpi
+  - token-macro.jpi
+  - credentials.jpi
+  - ssh-credentials.jpi
+  - ssh-slaves.jpi
+  - junit.jpi
+  - script-security.jpi
+  - javadoc.jpi
+  - matrix-project.jpi
+  - mailer.jpi
+  - git-client.hpi
+  - git.hpi
+  - plain-credentials.jpi
+  - github-api.hpi
+  - github.hpi
+  - gradle.jpi
+  - join.jpi
+  - maven-plugin.jpi
+  - copyartifact.jpi
+  - workflow-step-api.jpi
+  - ansible.jpi
+  - ssh-agent.jpi
+  - envinject.jpi
+  - chromedriver.jpi
+  - selenium.jpi
+  - seleniumhtmlreport.jpi
+  - node-iterator-api.jpi
+  - ec2.jpi
+  - windows-slaves.jpi
