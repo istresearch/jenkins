@@ -19,3 +19,10 @@ node-iterator-api:1.5
 ec2:1.29
 slack:1.8.1
 cucumber-slack-notifier:0.7.1
+authorize-project:1.1.0
+promoted-builds:2.24.1
+artifactdeployer:0.33
+datadog:0.4.1
+greenballs:1.15
+pagerduty:0.2.2
+shiningpanda:0.22
