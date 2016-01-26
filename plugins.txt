@@ -17,3 +17,5 @@ selenium:2.4.1
 seleniumhtmlreport:1.0
 node-iterator-api:1.5
 ec2:1.29
+slack:1.8.1
+cucumber-slack-notifier:0.7.1
