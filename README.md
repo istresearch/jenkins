@@ -34,13 +34,35 @@ whatever is defined in the `docker-compose.yml` file
 To run the container, type the following
 
 ```Bash
-docker run -d --name jenkins[Version] --net=host -p 8080:8080 -p 5000:5000 -v /data/jenkins:/var/jenkins_home -u 1000 -t ist/jenkins:[Version]
+# Run without mounting the docker socket
+docker run \
+  -d \
+  --name jenkins \
+  --net=host \
+  -p 8080:8080 \
+  -p 5000:5000 \
+  -v /data/jenkins:/var/jenkins_home \
+  -u 1000 \
+  istresearch/jenkins:latest
+
+# Run with the docker socket mounted
+docker run \
+  -d \
+  --name jenkins \
+  --net=host \
+  -p 8080:8080 \
+  -p 5000:5000 \
+  -v /data/jenkins:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -u 1000 \
+  istresearch/jenkins:latest
 ```
 - *-d* to run in the background
 - *--net=host* so the container shares the host network stack and has access to the /etc/hosts for network communication
 - *-p 8080:8080* so the 8080 port in the container receives all requests to port 8080 on the host. Jenkins runs on Tomcat, which uses port 8080 as the default
 - *-p 5000:5000* required to attach slave servers; port 50000 is used to communicate between master and slaves
 - *-v /data/jenkins:/var/jenkins_home* to bind host directory /data/jenkins to the container directory /var/jennkins_home
+- *-v /var/run/docker.sock:/var/run/docker.sock* Mounts the docker socket into the container 
 - *-u 1000* jenkins user uid is 1000, same as ubuntu and vagrant uid's are 1000
 
 Alternatively, you can run one of the following

@@ -1,8 +1,6 @@
 version: '2'
 services:
   jenkins:
-    build:
-      context: .
     image: istresearch/jenkins:latest
     container_name: jenkins
     user: jenkins
