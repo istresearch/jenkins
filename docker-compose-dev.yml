@@ -1,0 +1,7 @@
+version: '2'
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: local/jenkins:latest
