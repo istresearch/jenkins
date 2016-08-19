@@ -31,6 +31,10 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys \
     apt-get update && \
     apt-get install -qy docker-engine=1.11.2-0~jessie
 
+# Install compose
+RUN curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
+    chmod +x /usr/local/bin/docker-compose
+
 RUN pip install cffi --upgrade
 RUN pip install pip2pi ansible==2.0
 
