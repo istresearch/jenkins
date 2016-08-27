@@ -29,7 +29,7 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys \
     echo deb https://apt.dockerproject.org/repo debian-jessie main >> \
       /etc/apt/sources.list.d/docker.list && \
     apt-get update && \
-    apt-get install -qy docker-engine=1.11.2-0~jessie
+    apt-get install -qy docker-engine=1.12.0-0~jessie
 
 # Install compose
 RUN curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
