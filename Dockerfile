@@ -43,5 +43,5 @@ COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/ref/plugins.txt
 
 # add the jenkins user to the docker group so that sudo is not required to run docker commands
-RUN gpasswd -a jenkins docker
+RUN groupmod -g 1034 docker && gpasswd -a jenkins docker
 USER jenkins
