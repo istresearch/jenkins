@@ -20,6 +20,8 @@ apt-get install -qy \
   libatlas-base-dev \
   apt-transport-https \
   ca-certificates \
+  zip \
+  unzip \
   gfortran && \
 rm -rf /var/lib/apt/lists/*
 
