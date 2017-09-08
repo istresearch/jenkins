@@ -12,7 +12,7 @@ apt-get install -qy \
   libxslt-dev \
   libffi-dev \
   libssl-dev \
-  libmysqlclient-dev \
+  default-libmysqlclient-dev \
   python-mysqldb \
   python-pip \
   libjpeg-dev \
