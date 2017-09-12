@@ -22,19 +22,19 @@ apt-get install -qy \
   libatlas-base-dev \
   apt-transport-https \
   ca-certificates \
+  wget \
+  software-properties-common \
   zip \
   unzip \
   gfortran && \
 rm -rf /var/lib/apt/lists/*
 
 # Install docker
-
-RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys \
-      58118E89F3A912897C070ADBF76221572C52609D && \
-    echo deb https://apt.dockerproject.org/repo debian-jessie main >> \
-      /etc/apt/sources.list.d/docker.list && \
+RUN wget https://download.docker.com/linux/debian/gpg && \
+    apt-key add gpg && \
+    echo "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee -a /etc/apt/sources.list.d/docker.list && \
     apt-get update && \
-    apt-get install -qy docker-engine=17.03.1~ce-0~debian-jessie
+    apt-get install -qy docker-ce
 
 # Install compose
 RUN curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \

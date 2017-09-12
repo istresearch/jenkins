@@ -17,7 +17,7 @@ To build the Jenkins docker image that you want to run in a container. Ensure
 you are in the `/jenkins` directory with the *Dockerfile* and run
 
 ```Bash
-docker build -t ist/jenkins:[Version]
+docker build -t istresearch/jenkins:[Version]
 ```
 
 Alternatively you can do.
