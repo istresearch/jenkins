@@ -1,0 +1,4 @@
+yum update 
+Yum install Java -y
+yum install git -y
+yum install maven -y
